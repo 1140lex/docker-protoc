@@ -145,6 +145,7 @@ func SetupMux(ctx context.Context, cfg proxyConfig) *http.ServeMux {
   gwmux := runtime.NewServeMux(
     runtime.WithIncomingHeaderMatcher(incomingHeaderMatcher),
     runtime.WithOutgoingHeaderMatcher(outgoingHeaderMatcher),
+    runtime.WithMarshalerOption(runtime.MIMEWildcard, &runtime.JSONPb{OrigName: true, EmitDefaults: true}),
   )
   fmt.Printf("Proxying requests to gRPC service at '%s'\n", cfg.backend)
 
