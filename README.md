@@ -1,3 +1,11 @@
+#LexSet API Gateway Generator
+
+Build Command: 
+
+```bash
+docker build -t lexset/gen-grpc-gateway:latest -f Dockerfile --build-arg grpc=1.14 --target gen-grpc-gateway . 
+```
+
 # gRPC/Protocol Buffer Compiler Containers
 
 This repository contains support for various Docker images that wrap `protoc`,
